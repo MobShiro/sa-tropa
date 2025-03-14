@@ -1,18 +1,45 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import './styles.css';
 
 const Counter = () => {
-  const [color, setColor] = useState("black");
+  const [bgColor, setBgColor] = useState("white");
 
-  // Function to update color
-  const updateColor = (color) => {
-    setColor(color);
+  // Function to update background color
+  const updateBgColor = (event) => {
+    event.preventDefault();
+    const newColor = event.target.elements.colorInput.value;
+    setBgColor(newColor);
   };
 
   return (
-    <div>
-      <h2 style={{ color: color }}>SAMPLE SERVER JOSHUA ORTEGA</h2>
-  
-    </div>
+    <Router>
+      <div style={{ backgroundColor: bgColor, minHeight: "100vh" }}>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/update-color">Update Color</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<h2>Hello my name is Joshua Ortega I'm From BSIT-3B</h2>} />
+          <Route path="/update-color" element={
+            <form onSubmit={updateBgColor}>
+              <label>
+                Enter Color:
+                <input type="text" name="colorInput" />
+              </label>
+              <button type="submit">Update Color</button>
+            </form>
+          } />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
