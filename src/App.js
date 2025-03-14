@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       <h1>Simple React App</h1>
-      <Message text="Welcome to React!" />
+      <Message text="JUSWA" />
       <Counter />
     </div>
   );

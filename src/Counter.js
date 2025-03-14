@@ -1,35 +1,25 @@
 import { useState } from "react";
 
 const Counter = () => {
-  const [message, setMessage] = useState("Hello!");
+  const [color, setColor] = useState("black");
 
-  // Function to update message in a unique way
-  const updateMessage = (action) => {
-    switch (action) {
-      case "greet":
-        setMessage("Hey there! How's it going?");
-        break;
-      case "funny":
-        setMessage("Why don’t skeletons fight each other? They don’t have the guts! 😂");
-        break;
-      case "motivate":
-        setMessage("You are amazing! Keep pushing forward! 💪");
-        break;
-      case "reset":
-        setMessage("Hello!");
-        break;
-      default:
-        setMessage("Hmm... what do you want?");
-    }
+  // Function to update color
+  const updateColor = (color) => {
+    setColor(color);
   };
 
   return (
     <div>
-      <h2>{message}</h2>
-      <button onClick={() => updateMessage("greet")}>Greet</button>
-      <button onClick={() => updateMessage("funny")}>Tell a Joke</button>
-      <button onClick={() => updateMessage("motivate")}>Motivate</button>
-      <button onClick={() => updateMessage("reset")}>Reset</button>
+      <h2 style={{ color: color }}>JOSHUA ORTEGA</h2>
+      <button onClick={() => updateColor("blue")}>Blue</button>
+      <button onClick={() => updateColor("green")}>Green</button>
+      <button onClick={() => updateColor("orange")}>Orange</button>
+      <button onClick={() => updateColor("red")}>Red</button>
+      <button onClick={() => updateColor("purple")}>Purple</button>
+      <button onClick={() => updateColor("yellow")}>Yellow</button>
+      <button onClick={() => updateColor("pink")}>Pink</button>
+      <button onClick={() => updateColor("brown")}>Brown</button>
+      <button onClick={() => updateColor("black")}>Reset</button>
     </div>
   );
 };
