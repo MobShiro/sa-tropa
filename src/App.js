@@ -4,7 +4,7 @@ import Message from "./Message";
 const App = () => {
   return (
     <div>
-      <h1>Simple React App</h1>
+      <h1>SAMPLE SERVER</h1>
       <Message text="JUSWA" />
       <Counter />
     </div>
